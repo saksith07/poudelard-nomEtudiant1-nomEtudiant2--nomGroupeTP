@@ -11,3 +11,22 @@ Sortie :
 Entrez le nom de votre personnage : Potter"""
 
 def demander_texte(message):
+    saisie_utilisateur = input(message)
+
+    #Comment vérifier que l'utilisateur ne saisit rien ou seulement des espaces
+
+    if saisie_utilisateur.strip()== "" :
+
+        while saisie_utilisateur.strip()== "":
+            saisie_utilisateur= input(message)
+
+    saisie_propre = saisie_utilisateur.strip()
+
+    return saisie_propre
+
+
+
+
+
+
+
