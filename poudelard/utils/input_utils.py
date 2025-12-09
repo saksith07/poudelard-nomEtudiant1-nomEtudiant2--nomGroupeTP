@@ -10,3 +10,4 @@ nom = demander_texte("Entrez le nom de votre personnage : ")
 Sortie :
 Entrez le nom de votre personnage : Potter"""
 
+def demander_texte(message):
