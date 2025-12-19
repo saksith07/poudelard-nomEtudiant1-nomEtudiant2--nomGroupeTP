@@ -26,21 +26,29 @@ def afficher_personnage(joueur):
     print("Profil du personnage :")
 
     for cle in joueur:
-        valeur = joueur[cle]
+        # Cas des attributs (dictionnaire)
+        if cle == "Attributs":
+            print("Attributs :")
+            for attribut in joueur["Attributs"]:
+                print("- " + attribut + " : " + str(joueur["Attributs"][attribut]))
 
-        if isinstance(valeur, dict):
-            print(f"{cle} :")
-            for sous_cle in valeur:
-                print(f"- {sous_cle} : {valeur[sous_cle]}")
-
-        elif isinstance(valeur, list):
-            if valeur:
-                print(f"{cle} : {', '.join(valeur)}")
+        # Cas de l'inventaire (liste)
+        elif cle == "Inventaire":
+            if joueur["Inventaire"] == []:
+                print("Inventaire :")
             else:
-                print(f"{cle} :")
+                print("Inventaire : " + ", ".join(joueur["Inventaire"]))
 
+        # Cas des sortilèges (liste)
+        elif cle == "Sortilèges":
+            if joueur["Sortilèges"] == []:
+                print("Sortilèges :")
+            else:
+                print("Sortilèges : " + ", ".join(joueur["Sortilèges"]))
+
+        # Cas simples (Nom, Prenom, Argent, etc.)
         else:
-            print(f"{cle} : {valeur}")
+            print(cle + " : " + str(joueur[cle]))
 
 # ================================
 # Gestion de l'argent
