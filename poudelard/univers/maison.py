@@ -1,5 +1,4 @@
-from utils import demander_choix
-
+from utils.input_utils import demander_choix
 
 def actualiser_points_maison(maisons, nom_maison, points):
     if nom_maison in maisons:
